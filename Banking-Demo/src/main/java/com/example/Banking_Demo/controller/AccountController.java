@@ -7,6 +7,8 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @RestController
 @RequestMapping("/Account")
 public class AccountController {
@@ -23,6 +25,17 @@ public class AccountController {
     public ResponseEntity<AccountDto> getAccount(@PathVariable long id) {
         AccountDto account = accountService.getAccountbyId(id);
         return new ResponseEntity<>(account, HttpStatus.OK);
+    }
+    @GetMapping("/getAllAccounts")
+    public ResponseEntity<List<AccountDto>> getAllAccounts(){
+        List<AccountDto> accounts = accountService.getAllAccounts();
+        return new ResponseEntity<>(accounts, HttpStatus.OK);
+    }
+
+    @PutMapping("/Deposit")
+    public  ResponseEntity<AccountDto>Deposit(@RequestBody AccountDto accountDto){
+        AccountDto updatedBalance= accountService.Deposit(accountDto.getId(), accountDto.getBalance());
+        return new ResponseEntity<>(updatedBalance, HttpStatus.OK);
     }
 
 }

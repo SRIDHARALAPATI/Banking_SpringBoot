@@ -34,6 +34,18 @@ public class Account {
         return accountHolderName;
     }
 
+    public void setId(long id) {
+        this.id = id;
+    }
+
+    public void setAccountHolderName(String accountHolderName) {
+        this.accountHolderName = accountHolderName;
+    }
+
+    public void setBalance(double balance) {
+        this.balance = balance;
+    }
+
     public  Account(){
 
     }

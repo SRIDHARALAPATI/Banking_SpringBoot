@@ -24,6 +24,18 @@ public class AccountDto
         return id;
     }
 
+    public void setId(long id) {
+        this.id = id;
+    }
+
+    public void setBalance(double balance) {
+        this.balance = balance;
+    }
+
+    public void setAccountHolderName(String accountHolderName) {
+        this.accountHolderName = accountHolderName;
+    }
+
     public double getBalance() {
         return balance;
     }
